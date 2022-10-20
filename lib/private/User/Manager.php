@@ -397,7 +397,7 @@ class Manager extends PublicEmitter implements IUserManager {
 		$notificationManager = \OC::$server->get(IManager::class);
 		if ($registry->delegateIsHardUserLimitReached($notificationManager)) {
 			$l = \OC::$server->getL10N('lib');
-			throw new HintException($l->t('Nextcloud Enterprise subscription needed for more users. Check your notifications to learn more.'));
+			throw new HintException($l->t('The user limit has been reached and the user was not created. Check your notifications to learn more.'));
 		}
 
 		$localBackends = [];
